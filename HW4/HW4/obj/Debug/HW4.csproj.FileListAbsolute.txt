@@ -1,0 +1,7 @@
+D:\AutomationCourses\HW4\HW4\bin\Debug\HW4.exe.config
+D:\AutomationCourses\HW4\HW4\bin\Debug\HW4.exe
+D:\AutomationCourses\HW4\HW4\bin\Debug\HW4.pdb
+D:\AutomationCourses\HW4\HW4\obj\Debug\HW4.csproj.CoreCompileInputs.cache
+D:\AutomationCourses\HW4\HW4\obj\Debug\HW4.exe
+D:\AutomationCourses\HW4\HW4\obj\Debug\HW4.pdb
+D:\AutomationCourses\HW4\HW4\obj\Debug\HW4.csprojAssemblyReference.cache
