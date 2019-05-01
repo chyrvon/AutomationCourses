@@ -1,0 +1,7 @@
+D:\AutomationCourses\HW7\HW7\bin\Debug\HW7.exe.config
+D:\AutomationCourses\HW7\HW7\bin\Debug\HW7.exe
+D:\AutomationCourses\HW7\HW7\bin\Debug\HW7.pdb
+D:\AutomationCourses\HW7\HW7\obj\Debug\HW7.csprojAssemblyReference.cache
+D:\AutomationCourses\HW7\HW7\obj\Debug\HW7.csproj.CoreCompileInputs.cache
+D:\AutomationCourses\HW7\HW7\obj\Debug\HW7.exe
+D:\AutomationCourses\HW7\HW7\obj\Debug\HW7.pdb
