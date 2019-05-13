@@ -1,7 +1,6 @@
 ﻿using System;
-namespace HW_Task2
+namespace CustomMethods
 {
-    using CustomMethods;
     class Program
     {
         static void Main(string[] args)
