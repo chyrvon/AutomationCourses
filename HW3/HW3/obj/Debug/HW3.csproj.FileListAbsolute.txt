@@ -5,3 +5,9 @@ D:\AutomationCourses\HW3\HW3\HW3\bin\Debug\HW3.exe
 D:\AutomationCourses\HW3\HW3\HW3\bin\Debug\HW3.pdb
 D:\AutomationCourses\HW3\HW3\HW3\obj\Debug\HW3.exe
 D:\AutomationCourses\HW3\HW3\HW3\obj\Debug\HW3.pdb
+D:\AutomationCourses\HW3\HW3\obj\Debug\HW3.csproj.CoreCompileInputs.cache
+D:\AutomationCourses\HW3\HW3\bin\Debug\HW3.exe.config
+D:\AutomationCourses\HW3\HW3\bin\Debug\HW3.exe
+D:\AutomationCourses\HW3\HW3\bin\Debug\HW3.pdb
+D:\AutomationCourses\HW3\HW3\obj\Debug\HW3.exe
+D:\AutomationCourses\HW3\HW3\obj\Debug\HW3.pdb
