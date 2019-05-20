@@ -8,7 +8,8 @@ namespace HW2
 {
     class Circle
     {
-        public int Radius;
+        public int Radius { get; set; }
+        public double Square { get; set; }
         public Circle()
         {
             Radius = new Сalculation().EnterValue("Enter the radius of the Circle: ");
@@ -16,7 +17,8 @@ namespace HW2
 
         public double AreaOfCircle()
         {
-            return Constants.Pi * Math.Pow(Radius, 2);
+            Square = Constants.Pi * Math.Pow(Radius, 2);
+            return Square;
         }
     }
 }

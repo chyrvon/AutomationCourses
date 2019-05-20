@@ -8,10 +8,6 @@ namespace HW2
 {
     class Сalculation
     {
-        public Сalculation()
-        {
-        }
-
         public int EnterValue(string strMessage)
         {
             int value = 0;
@@ -19,12 +15,9 @@ namespace HW2
             for (int retry = 1; retry < 4; retry++)
             {
                 int.TryParse(Console.ReadLine(), out value);
-                if (value <= 0)
+                if (value <= 0 && retry != 3)
                 {
-                    if (retry != 3)
-                    {
                         Console.Write($"The entered value is not valid. Attempts left: {3 - retry}. Try again.\nEnter an integer in the range 0-32767: ");
-                    }
                 }
                 else
                 {
@@ -47,8 +40,6 @@ namespace HW2
             {
                 return valueReturn = 2;
             }
-
-
             return valueReturn;
         }
     }

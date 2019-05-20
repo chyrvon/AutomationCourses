@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace HW3
 {
-    class Array
+    public class UserArray
     {
-        public Array()
-        {
-        }
-
-        public int EnterValue(string strMessage, int countNumbArray)
+        public static int startArray = 0;
+        public static int endArray = 0;
+        public static int EnterValue(string strMessage, int countNumbArray = 1)
         {
             int value = 0;
             Console.Write(strMessage);
@@ -42,22 +40,33 @@ namespace HW3
             return value;
         }
 
-        public int[] FillArray(int [] numbers)
+        public static int[] FillArray(int [] numbers)
         {
             int tmp = 0;
-            for (int i = 1; i <= Constants.MaxValueArray; i++)
+            
+            for (int i = 0; i < Constants.MaxReTry; i++)
             {
-                tmp = new Array().EnterValue($"\nEnter {i} integer number: ", i);
-                if (tmp != 1)
+                startArray = EnterValue($"\nEnter start number of array: ");
+                endArray = EnterValue($"\nEnter end number of array: ");
+                tmp = endArray - startArray;
+                if (tmp < Constants.MinValueArray)
                 {
-                    numbers[i] = tmp;
+                    Console.WriteLine($"Your range is not valid {tmp}. Min range {Constants.MinValueArray}. Try again.");
                 }
                 else break;
+            }
+            Console.Clear();
+            Console.WriteLine($"Your range from {startArray} to {endArray}");
+            int tmp2 = startArray;
+            for (int i = 0; i <= tmp; i++)
+            {
+                numbers[i] = tmp2;
+                tmp2++;
             }
             return numbers;
         }
 
-        public int LenghtArray(int [] numbers)
+        public static int LenghtArray(int [] numbers)
         {
             int lenghtArray = 0;
             for (int i = 1; i <= Constants.MaxValueArray; i++)
@@ -68,11 +77,10 @@ namespace HW3
             return lenghtArray;
         }
 
-        public void DisplayArray(int [] numbers)
+        public static void DisplayArray(int [] numbers)
         {
-            Console.Clear();
             Console.WriteLine("Array:");
-            for (int i = 1; i <= LenghtArray(numbers); i++)
+            for (int i = 0; i <= LenghtArray(numbers)-1; i++)
             {
                 Console.WriteLine(numbers[i]);
             }

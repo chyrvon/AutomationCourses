@@ -8,7 +8,7 @@ namespace HW3
 {
     class Constants
     {
-        public const int MinValueNumber = 20;
+        public const int MinValueNumber = 0;
         public const int MinValueArray = 10;
         public const int MaxValueArray = 100;
         public const int NumberDiv = 3;

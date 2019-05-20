@@ -12,6 +12,7 @@ namespace HW2
         static void Main(string[] args)
         {
             Square square1 = new Square();
+            square1.Side = -12;
             Circle circle1 = new Circle();
 
             Console.WriteLine($"Area of a Square: {square1.AreaOfSquare()} \nArea of a Circle: {Math.Round(circle1.AreaOfCircle(), 2)}");

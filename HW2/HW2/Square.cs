@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HW2
 {
-    class Square
+   public class Square
     {
-        public int Side;
+        public int Side { get; set; }
         public Square()
         {
             Side = new Сalculation().EnterValue("Enter the length of the side of the Square: ");

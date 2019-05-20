@@ -12,3 +12,10 @@ D:\AutomationCourses\HW2\HW2\obj\Debug\HW2.csprojAssemblyReference.cache
 D:\AutomationCourses\HW2\HW2\obj\Debug\HW2.csproj.CoreCompileInputs.cache
 D:\AutomationCourses\HW2\HW2\obj\Debug\HW2.exe
 D:\AutomationCourses\HW2\HW2\obj\Debug\HW2.pdb
+D:\Courses\HW2\HW2\bin\Debug\HW2.exe.config
+D:\Courses\HW2\HW2\bin\Debug\HW2.exe
+D:\Courses\HW2\HW2\bin\Debug\HW2.pdb
+D:\Courses\HW2\HW2\obj\Debug\HW2.csprojAssemblyReference.cache
+D:\Courses\HW2\HW2\obj\Debug\HW2.csproj.CoreCompileInputs.cache
+D:\Courses\HW2\HW2\obj\Debug\HW2.exe
+D:\Courses\HW2\HW2\obj\Debug\HW2.pdb
