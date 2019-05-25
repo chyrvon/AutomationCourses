@@ -1,88 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HW3
 {
     public class UserArray
     {
-        public static int startArray = 0;
-        public static int endArray = 0;
-        public static int EnterValue(string strMessage, int countNumbArray = 1)
+        private protected int _startArray;
+        private protected int _endArray;
+        public int startArray
         {
-            int value = 0;
-            Console.Write(strMessage);
-            for (int retry = 1; retry < Constants.MaxReTry + 1; retry++)
+            get
             {
-                int.TryParse(Console.ReadLine(), out value);
-
-                if ((value == 1) && (countNumbArray > Constants.MinValueArray))//input complete
+                return _startArray; 
+            }
+            set
+            {
+                if (value <= 0)
                 {
-                    return value;
-                }
-                if (value < Constants.MinValueNumber)
-                {
-                    if (retry != Constants.MaxReTry)
-                    {
-                        Console.Write($"The entered value is not valid. Attempts left: {Constants.MaxReTry - retry}. Try again.\nEnter an integer number in the range 20-32767: ");
-                    }
+                    Console.WriteLine($"{value} is not valid.");
+                    _startArray = new Random().Next(Constants.MinValueNumber, 500);
+                    Console.WriteLine($"Set random value: {_startArray}");
                 }
                 else
                 {
-                    return value;
+                    _startArray = value;
                 }
             }
-            Random random = new Random();
-            value = random.Next(Constants.MinValueNumber, 40);
-            Console.Write($"\nAutocomplete number to array: {value}\n");
-            return value;
+        }
+        public int endArray
+        {
+            get
+            {
+                return _endArray;
+            }
+            set
+            {
+                if (value <= 0 || value < _startArray + Constants.MinElementsArray)
+                {
+                    Console.WriteLine($"Your range is not valid {value - _startArray}. " +
+                        $"Min range {Constants.MinElementsArray}.");
+                    _endArray = _startArray + Constants.MinElementsArray;
+                    Console.WriteLine($"Set value: {_endArray - 1}");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    _endArray = value;
+                }
+            }
+        }
+        public int[] numbers = new int[1];
+                
+        public UserArray()
+        {
+            FillArray();
         }
 
-        public static int[] FillArray(int [] numbers)
+        private int [] FillArray()
         {
-            int tmp = 0;
-            
-            for (int i = 0; i < Constants.MaxReTry; i++)
-            {
-                startArray = EnterValue($"\nEnter start number of array: ");
-                endArray = EnterValue($"\nEnter end number of array: ");
-                tmp = endArray - startArray;
-                if (tmp < Constants.MinValueArray)
-                {
-                    Console.WriteLine($"Your range is not valid {tmp}. Min range {Constants.MinValueArray}. Try again.");
-                }
-                else break;
-            }
+            startArray = new GetValue().ReadValueConsole("\nEnter start number of array: ");
+            endArray = new GetValue().ReadValueConsole($"\nEnter end number of array: ");
             Console.Clear();
-            Console.WriteLine($"Your range from {startArray} to {endArray}");
-            int tmp2 = startArray;
-            for (int i = 0; i <= tmp; i++)
+            Console.WriteLine($"Your array range from {startArray} to {endArray}");
+            int size = endArray - startArray + 1;
+            Array.Resize(ref numbers, size);
+            int value = startArray;
+            for (int i = 0; i < size; i++)
             {
-                numbers[i] = tmp2;
-                tmp2++;
+                numbers[i] = value;
+                value++;
             }
             return numbers;
         }
 
-        public static int LenghtArray(int [] numbers)
-        {
-            int lenghtArray = 0;
-            for (int i = 1; i <= Constants.MaxValueArray; i++)
-            {
-                if (numbers[i] > 0) lenghtArray++;
-                else break;
-            }
-            return lenghtArray;
-        }
-
-        public static void DisplayArray(int [] numbers)
+        public void DisplayArray()
         {
             Console.WriteLine("Array:");
-            for (int i = 0; i <= LenghtArray(numbers)-1; i++)
+            foreach (int i in numbers)
             {
-                Console.WriteLine(numbers[i]);
+                Console.WriteLine(i);
             }
         }
     }

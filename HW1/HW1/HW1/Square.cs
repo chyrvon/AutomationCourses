@@ -37,7 +37,7 @@ namespace HW1
         public double AreaOfSquare(double side)
         {
             Side = side;
-            return Math.Pow(Side, 2);
+            return Math.Round(Math.Pow(Side, 2), 2);
         }
     }
 }

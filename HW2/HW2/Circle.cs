@@ -8,17 +8,36 @@ namespace HW2
 {
     class Circle
     {
-        public int Radius { get; set; }
-        public double Square { get; set; }
-        public Circle()
+        private double _radius;
+        public double Radius
         {
-            Radius = new Сalculation().EnterValue("Enter the radius of the Circle: ");
+            get
+            {
+                return _radius;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    _radius = Constants.defaultValue;
+                    Console.WriteLine($"{value} is not valid. Set default value: {_radius}");
+                }
+                else
+                {
+                    _radius = value;
+                }
+            }
         }
 
-        public double AreaOfCircle()
+        public Circle()
         {
-            Square = Constants.Pi * Math.Pow(Radius, 2);
-            return Square;
+            Radius = new GetValue().ReadValueConsole("Enter the radius of the Circle: ");
+        }
+
+        public double AreaOfCircle(double radius)
+        {
+            Radius = radius;
+            return Math.Round(Constants.Pi * Math.Pow(Radius, 2), 2);
         }
     }
 }

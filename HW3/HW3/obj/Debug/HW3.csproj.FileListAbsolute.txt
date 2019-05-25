@@ -16,5 +16,5 @@ D:\Courses\HW3\HW3\obj\Debug\HW3.pdb
 D:\Courses\HW3\HW3\bin\Debug\HW3.exe.config
 D:\Courses\HW3\HW3\bin\Debug\HW3.exe
 D:\Courses\HW3\HW3\bin\Debug\HW3.pdb
-D:\Courses\HW3\HW3\obj\Debug\HW3.csprojAssemblyReference.cache
 D:\Courses\HW3\HW3\obj\Debug\HW3.csproj.CoreCompileInputs.cache
+D:\Courses\HW3\HW3\obj\Debug\HW3.csprojAssemblyReference.cache

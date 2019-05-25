@@ -6,18 +6,17 @@ namespace HW3
     {
         static void Main(string[] args)
         {
-            int[] numbers = new int[Constants.MaxValueArray];
-            Console.WriteLine($"Enter a range(at least {Constants.MinValueArray}) of integer " +
+            Console.WriteLine($"Enter a range(at least {Constants.MinElementsArray}) of integer " +
             $"numbers starting from {Constants.MinValueNumber}.");
-            numbers = UserArray.FillArray(numbers);
-            UserArray.DisplayArray(numbers);
+
+            UserArray numb = new UserArray();
+            numb.DisplayArray();
+
             Console.WriteLine($"\nThe sum of the numbers are divided by {Constants.NumberDiv} " +
-                $"and not divisible by {Constants.NumberNotDiv} equals: {Сalculation.Sum(numbers)}");
-            Console.WriteLine("Ready to Display 2?");
+                $"and not divisible by {Constants.NumberNotDiv} equals: {new Сalculation().Sum(numb.numbers)}");
             Console.ReadKey();
             Console.Clear();
-            Сalculation.SumAndDisplay(UserArray.startArray, UserArray.endArray);
-            Console.ReadKey();
+            new Сalculation().SumAndDisplay(numb.startArray, numb.endArray);
         }
     }
 }

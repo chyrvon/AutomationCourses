@@ -5,3 +5,10 @@ D:\AutomationCourses\HW4\HW4\obj\Debug\HW4.csproj.CoreCompileInputs.cache
 D:\AutomationCourses\HW4\HW4\obj\Debug\HW4.exe
 D:\AutomationCourses\HW4\HW4\obj\Debug\HW4.pdb
 D:\AutomationCourses\HW4\HW4\obj\Debug\HW4.csprojAssemblyReference.cache
+D:\Courses\HW4\HW4\bin\Debug\HW4.exe.config
+D:\Courses\HW4\HW4\bin\Debug\HW4.exe
+D:\Courses\HW4\HW4\bin\Debug\HW4.pdb
+D:\Courses\HW4\HW4\obj\Debug\HW4.csprojAssemblyReference.cache
+D:\Courses\HW4\HW4\obj\Debug\HW4.csproj.CoreCompileInputs.cache
+D:\Courses\HW4\HW4\obj\Debug\HW4.exe
+D:\Courses\HW4\HW4\obj\Debug\HW4.pdb

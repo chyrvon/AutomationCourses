@@ -3,11 +3,11 @@ namespace HW3
 {
     class Сalculation
     {
-        public static int Sum(int[] numbers)
+        public int Sum(int[] numbers)
         {
             int sum = 0;
-            int lenghtArray = UserArray.LenghtArray(numbers);
-            for (int i = 1; i <= lenghtArray; i++)
+            int lenghtArray = numbers.Length;
+            for (int i = 0; i <= lenghtArray-1; i++)
             {
                 if ((numbers[i] % Constants.NumberDiv == 0) && (numbers[i] % Constants.NumberNotDiv != 0))
                 {
@@ -17,7 +17,7 @@ namespace HW3
             return sum;
         }
 
-        public static void SumAndDisplay(int startArray, int endArray)
+        public void SumAndDisplay(int startArray, int endArray)
         {
             int sum = 0;
 
@@ -31,6 +31,7 @@ namespace HW3
             }
             Console.WriteLine($"\nThe sum of the numbers are divided by {Constants.NumberDiv} " +
                 $"and not divisible by {Constants.NumberNotDiv} equals: {sum}");
+            Console.ReadKey();
         }
     }
 }

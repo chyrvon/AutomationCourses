@@ -2,17 +2,38 @@
 
 namespace HW2
 {
-   public class Square
+    class Square
     {
-        public int Side { get; set; }
-        public Square()
+        private double _side;
+        public double Side
         {
-            Side = new Сalculation().EnterValue("Enter the length of the side of the Square: ");
+            get
+            {
+                return _side;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    _side = Constants.defaultValue;
+                    Console.WriteLine($"{value} is not valid. Set default value: {_side}");
+                }
+                else
+                {
+                    _side = value;
+                }
+            }
         }
 
-        public double AreaOfSquare()
+        public Square()
         {
-            return Math.Pow(Side, 2);
+            Side = new GetValue().ReadValueConsole("Enter the length of the side of the Square: ");
+        }
+
+        public double AreaOfSquare(double side)
+        {
+            Side = side;
+            return Math.Round(Math.Pow(Side, 2), 2);
         }
     }
 }
