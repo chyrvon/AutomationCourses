@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculation.cs" />
+    <Compile Include="ShowTaskPriority.cs" />
+    <Compile Include="TasksArray.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="GetValueConsole.cs" />
+    <Compile Include="Print.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
