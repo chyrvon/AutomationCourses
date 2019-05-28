@@ -8,7 +8,27 @@ namespace HW6
 {
     public class Lamp
     {
-        public int IndexNumber { get; set; }
+        private int _indexNumber;
+        public int IndexNumber {
+            get
+            {
+                return _indexNumber;
+            }
+            set
+            {
+
+                if (0 > value || value > 1000)
+                {
+                    Console.WriteLine($"{value} is not valid.");
+                    _indexNumber = Garland.DefaultNumberOfLamps; 
+                    Console.WriteLine($"Set default value: {_indexNumber}");
+                }
+                else
+                {
+                    _indexNumber = value;
+                }
+            }
+        }
 
         public Lamp(int indexNumber)
         {

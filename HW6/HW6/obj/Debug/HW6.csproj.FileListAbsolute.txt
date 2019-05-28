@@ -1,4 +1,3 @@
-D:\AutomationCourses\HW6\HW6\obj\Debug\HW6.csprojAssemblyReference.cache
 D:\AutomationCourses\HW6\HW6\obj\Debug\HW6.csproj.CoreCompileInputs.cache
 D:\AutomationCourses\HW6\HW6\bin\Debug\HW6.exe.config
 D:\AutomationCourses\HW6\HW6\bin\Debug\HW6.exe
@@ -15,3 +14,4 @@ D:\Courses\HW6\HW6\obj\Debug\HW6.csproj.CoreCompileInputs.cache
 D:\Courses\HW6\HW6\obj\Debug\HW6.csproj.CopyComplete
 D:\Courses\HW6\HW6\obj\Debug\HW6.exe
 D:\Courses\HW6\HW6\obj\Debug\HW6.pdb
+D:\AutomationCourses\HW6\HW6\obj\Debug\HW6.csprojAssemblyReference.cache

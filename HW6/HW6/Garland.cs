@@ -8,7 +8,7 @@ namespace HW6
 {
     public abstract class Garland
     {
-        private const int _defaultNumberOfLamps = 10;
+        public const int DefaultNumberOfLamps = 10;
 
 
         public Lamp[] _garland;
