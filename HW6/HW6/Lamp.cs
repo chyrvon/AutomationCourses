@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HW6
 {
@@ -16,7 +12,6 @@ namespace HW6
             }
             set
             {
-
                 if (0 > value || value > 1000)
                 {
                     Console.WriteLine($"{value} is not valid.");
