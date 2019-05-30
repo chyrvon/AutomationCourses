@@ -2,7 +2,7 @@
 
 namespace HW6
 {
-    class ConsoleChangeColor
+    public class ConsoleChangeColor
     {
         public ConsoleChangeColor (string statusLamp, string colorsLamp)
         {

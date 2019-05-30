@@ -67,7 +67,7 @@ namespace HW5
             Console.Write($"\nIt is possible to perform the following tasks in {nDayDoneTasks} days: ");
             PrintTaskPage.StringToPrn += $"\nIt is possible to perform the following tasks in {nDayDoneTasks} days: ";
 
-            int timeLeft = nDayDoneTasks * 24;
+            int timeLeft = nDayDoneTasks * 8;
             for (int i = 1; i < 4; i++)
             {
                 if (timeLeft > 0)

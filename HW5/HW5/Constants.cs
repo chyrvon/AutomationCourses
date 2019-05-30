@@ -14,4 +14,5 @@
         public const int TimeEasy = 1;
         public const int DefaultNumerTasks = 5;
     }
+
 }

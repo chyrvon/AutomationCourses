@@ -24,6 +24,10 @@ namespace HW6
 
         public string ReadValueConsoleColor()
         {
+            //ColorMy result2 = ColorMy.Red;
+            //Enum.TryParse(Console.ReadLine(), true, out result2);
+            //result2.ToString();
+
             ColorMy result;
             string value = Console.ReadLine();
             Enum.TryParse(value, true, out result);

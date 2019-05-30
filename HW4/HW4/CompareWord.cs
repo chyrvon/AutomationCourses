@@ -6,8 +6,9 @@ namespace HW4
     {
         public CompareWord(string enterWord)
         { 
-            string convWord = "";
+            string convWord = string.Empty;
             enterWord = enterWord.ToLower();
+
             for (int i = 0; i < enterWord.Length; i++)
             {
                 convWord += enterWord[enterWord.Length - i - 1];

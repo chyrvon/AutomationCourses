@@ -26,12 +26,12 @@ namespace HW6
         {
             Console.WriteLine("Colored garland status:");
             PrintTaskPage.StringToPrn += $"\nColored garland status:\n";
-            foreach (ColorLamp i in Garlands)
+            foreach (ColorLamp item in Garlands)
             {
-                new ConsoleChangeColor(i.GetStatusLamp(currentEvenMinute), i.ColorsLamp);
-                Console.WriteLine($"{i.IndexNumber + 1} lamp is {i.ColorsLamp} and {i.GetStatusLamp(currentEvenMinute)}");
+                new ConsoleChangeColor(item.GetStatusLamp(currentEvenMinute), item.ColorsLamp);
+                Console.WriteLine($"{item.IndexNumber + 1} lamp is {item.ColorsLamp} and {item.GetStatusLamp(currentEvenMinute)}");
                 Console.ResetColor();
-                PrintTaskPage.StringToPrn += $"{i.IndexNumber + 1} lamp is {i.ColorsLamp} and {i.GetStatusLamp(currentEvenMinute)}\n";
+                PrintTaskPage.StringToPrn += $"{item.IndexNumber + 1} lamp is {item.ColorsLamp} and {item.GetStatusLamp(currentEvenMinute)}\n";
             }
         }
 

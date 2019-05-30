@@ -29,7 +29,7 @@ namespace HW6
         public UserMenu()
         {
             Console.Clear();
-            Console.WriteLine("Menu:\n" +
+            Console.WriteLine(@"Menu:\n" +
                 "1. Set number of lamps to Simple Garland and show\n" +
                 "2. Set number of lamps to Colored Garland and show\n" +
                 "3. Show garlands and print\n\n" +

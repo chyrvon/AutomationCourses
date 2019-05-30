@@ -7,7 +7,7 @@ namespace HW3
         {
             int sum = 0;
             int lenghtArray = numbers.Length;
-            for (int i = 0; i <= lenghtArray-1; i++)
+            for (int i = 0; i <= lenghtArray - 1; i++)
             {
                 if ((numbers[i] % Constants.NumberDiv == 0) && (numbers[i] % Constants.NumberNotDiv != 0))
                 {
@@ -21,7 +21,7 @@ namespace HW3
         {
             int sum = 0;
 
-            for (int i = startArray+1; i <= endArray; i++)
+            for (int i = startArray; i <= endArray; i++)
             {
                 if ((i % Constants.NumberDiv == 0) && (i % Constants.NumberNotDiv != 0))
                 {
@@ -29,7 +29,7 @@ namespace HW3
                     Console.WriteLine(i);
                 }
             }
-            Console.WriteLine($"\nThe sum of the numbers are divided by {Constants.NumberDiv} " +
+            Console.WriteLine($@"The sum of the numbers are divided by {Constants.NumberDiv} " +
                 $"and not divisible by {Constants.NumberNotDiv} equals: {sum}");
             Console.ReadKey();
         }
