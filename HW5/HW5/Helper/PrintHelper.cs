@@ -5,11 +5,11 @@ namespace HW5
 {
     public class PrintTaskPage
     {
-        public static string StringToPrn;
+        public static string StringToPrint;
         private string PrintString;
         public PrintTaskPage()
         {
-            PrintString = StringToPrn;
+            PrintString = StringToPrint;
             PrintDocument printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintPageHandler);
             printDocument.Print();

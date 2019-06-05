@@ -1,5 +1,6 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using HW5.Enums;
 namespace HW5
 {
     public class ShowTaskPriority
@@ -25,33 +26,24 @@ namespace HW5
                 }
             }
         }
-        public ShowTaskPriority(int getPriority, int[,] arrayTask)
-        {
-            priority = getPriority;
-            switch (priority)
+        public ShowTaskPriority(string getPriority, List<Task> tasksArrayList)
+        { 
+            PriorityEnum listPriority;
+            Enum.TryParse(getPriority, true, out listPriority);
+            PreparationPrinting($"List of Task with priority {listPriority}");
+
+            for (int i = 0; i < tasksArrayList.Count; i++)
             {
-                case 1:
-                    PreparationPrinting ($"List of Task with priority {Constants.PriorityHigh}");
-                    break;
-                case 2:
-                    PreparationPrinting($"List of Task with priority {Constants.PriorityMed}");
-                    break;
-                case 3:
-                    PreparationPrinting($"List of Task with priority {Constants.PriorityLow}");
-                    break;
-            }
-            for (int i = 0; i < arrayTask.GetLength(0); i++)
-            {
-                if (arrayTask[i, 1] == priority)
+                if (tasksArrayList[i].Priority == listPriority.ToString())
                 {
-                    PreparationPrinting($"\nTask {arrayTask[i, 0]}");
+                    PreparationPrinting($"\nTask {tasksArrayList[i].Number}");
                 }
             }
         }
         private void PreparationPrinting(string strMessage)
         {
-            Console.Write($"\n" + strMessage);
-            PrintTaskPage.StringToPrn += $"\n" + strMessage;
+            Console.WriteLine(strMessage);
+            PrintTaskPage.StringToPrint += $"\n" + strMessage;
         }
     }
 }

@@ -22,7 +22,7 @@
         public string GetStatusLamp(bool currentEvenMinute)
         {
 
-            if (IndexNumber % 2 == 0 && currentEvenMinute)
+            if (IndexNumber % 2 == 0 ^ currentEvenMinute)
             {
                 return "On";
             }
