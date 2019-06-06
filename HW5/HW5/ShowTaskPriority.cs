@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using HW5.Enums;
 namespace HW5
 {
-    public class ShowTaskPriority
+    public class FilterTaskByPriority
     {
         private protected int _priority;
         private int priority
@@ -16,8 +17,9 @@ namespace HW5
             {
                 if (value < 1 || value > 3)
                 {
+                    var random = new Random();
                     Console.WriteLine($"{value} is not valid.");
-                    _priority = new Random().Next(1, 3);
+                    _priority = random.Next(1, Enum.GetNames(typeof(Priority)).Length);
                     Console.WriteLine($"Set random value: {_priority}");
                 }
                 else
@@ -26,18 +28,16 @@ namespace HW5
                 }
             }
         }
-        public ShowTaskPriority(string getPriority, List<Task> tasksArrayList)
+        public FilterTaskByPriority(Enum getPriority, List<Task> tasksArrayList)
         { 
-            PriorityEnum listPriority;
-            Enum.TryParse(getPriority, true, out listPriority);
-            PreparationPrinting($"List of Task with priority {listPriority}");
+            PreparationPrinting($"List of Task with priority {getPriority}");
 
-            for (int i = 0; i < tasksArrayList.Count; i++)
+            List<Task> responseTasksFromListByPriority = new List<Task>();
+            responseTasksFromListByPriority.AddRange(tasksArrayList.Where(x => x.Priority.Equals(getPriority)).ToList());
+
+            for (int i = 0; i < responseTasksFromListByPriority.Count; i++)
             {
-                if (tasksArrayList[i].Priority == listPriority.ToString())
-                {
-                    PreparationPrinting($"\nTask {tasksArrayList[i].Number}");
-                }
+                PreparationPrinting($"\nTask {responseTasksFromListByPriority[i].Number}");
             }
         }
         private void PreparationPrinting(string strMessage)

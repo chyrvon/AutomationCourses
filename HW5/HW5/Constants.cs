@@ -2,7 +2,8 @@
 {
     class Constants
     {
-        public const int ReTry = 3;
+        public const int MaxTasks = 1000;
+        public const int ReTryAttempsCount = 3;
         public const int WorkHours = 8;
     }
 }

@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using HW5.Enums;
+using HW5.Helper;
 namespace HW5
 {
     public class Task
     {
         private int _number;
-        private string _priority;
-        private string _difficulty;
+        private Enum _priority;
+        private Enum _difficulty;
         private int _duration;
         public int Number
         {
@@ -24,7 +25,7 @@ namespace HW5
                 _number = value;
             }
         }
-        public string Priority
+        public Enum Priority
         {
             get
             {
@@ -32,34 +33,10 @@ namespace HW5
             }
             set
             {
-                for (int _reTry = 1; _reTry <= Constants.ReTry; _reTry++)
-                {
-                    if (_reTry > 1)
-                    {
-                        value = Console.ReadLine();
-                    }
-                    if (Enum.TryParse(value, true, out PriorityEnum result))
-                    {
-                        _priority = result.ToString();
-                        break;
-                    }
-                    else
-                    {
-                        if (_reTry != Constants.ReTry)
-                        {
-                            Console.Write($"The entered value is not valid. "
-                            + $"Attempts left: {Constants.ReTry - _reTry}. Try again: ");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Set default priority: {PriorityEnum.Low}");
-                            _priority = PriorityEnum.Low.ToString(); //default
-                        }
-                    }
-                }
+                _priority = value;
             }
         }
-        public string Difficulty
+        public Enum Difficulty
         {
             get
             {
@@ -67,28 +44,7 @@ namespace HW5
             }
             set
             {
-                for (int _reTry = 1; _reTry <= Constants.ReTry; _reTry++)
-                {
-                    if (_reTry > 1) value = Console.ReadLine();
-                    if (Enum.TryParse(value, true, out DifficultyListEnum result))
-                    {
-                        _difficulty = result.ToString();
-                        break;
-                    }
-                    else
-                    {
-                        if (_reTry != Constants.ReTry)
-                        {
-                            Console.Write($"The entered value is not valid. "
-                            + $"Attempts left: {Constants.ReTry - _reTry}. Try again: ");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Set default priority: {DifficultyListEnum.Easy}");
-                            _difficulty = DifficultyListEnum.Easy.ToString(); //default
-                        }
-                    }
-                }
+                _difficulty = value;
             }
         }
         public int Duration
@@ -99,7 +55,7 @@ namespace HW5
             }
             set
             {
-                if (value <= 0 && value > 4)
+                if (value <= 0 || value > 4)
                 {
                     _duration = 1;
                 }
@@ -111,23 +67,23 @@ namespace HW5
         {
         }
 
-        public Task(int numTask, string priority, string difficult)
+        public Task(int numTask, Enum priority, Enum difficult)
         {
             Number = numTask;
             Priority = priority;
             Difficulty = difficult;
 
-            DifficultyEnum listDifficult;
-            Enum.TryParse(Difficulty, true, out listDifficult);
-            Duration = (int)listDifficult;
+            Difficulty listDifficult;
+            Enum.TryParse(Difficulty.ToString(), true, out listDifficult);
+            Duration = int.Parse(EnumsHelper.GetDescription(listDifficult));
+
         }
 
-        public void Display(List<Task> tasksArrayList)
+        public override string ToString()
         {
-            //Console.Clear();
-            Console.WriteLine("Tasks\t Priority\t Difficult\t Time");
-            tasksArrayList.ForEach(x => Console.WriteLine($"{x.Number,-3} \t {x.Priority,-10} " +
-            $"\t {x.Difficulty,-12} \t {x.Duration,-12}"));
+            return $"{Number,-3} \t {Priority,-10} \t {Difficulty,-12} \t {Duration,-12}";
         }
+
+            
     }
 }

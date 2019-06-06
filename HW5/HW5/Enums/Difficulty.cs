@@ -1,16 +1,14 @@
-﻿namespace HW5.Enums
-{
-    enum DifficultyEnum
-    {
-        Hard = 4,
-        Medium = 2,
-        Easy = 1
-    }
+﻿using System.ComponentModel;
 
-    enum DifficultyListEnum
+namespace HW5.Enums
+{
+    enum Difficulty
     {
+        [Description("4")]
         Hard = 1,
+        [Description("2")]
         Medium,
+        [Description("1")]
         Easy
     }
 }
