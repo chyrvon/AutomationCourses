@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace HW7
+﻿namespace HW7
 {
-    class Country
+    public class Country
     {
         public string Name;
         public bool IsTelenorSupported;
