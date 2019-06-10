@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using System.Drawing;
-using System.Drawing.Printing;
 
 namespace HW7
-{
-    class GetDataFromFile
+{ 
+    public class GetDataFromFile
     {
-        public static void GetCountriesFromFile()
+        public static void GetCountriesFromFile(DictionaryCountries dictionaryCountries)
         {
             string Path = @"D:\AutomationCourses\HW6\EC.txt"; //default
             OpenFileDialog dlg = new OpenFileDialog();
@@ -27,11 +24,11 @@ namespace HW7
                     while ((LineFromFile = sr.ReadLine()) != null)
                     {
                         Console.WriteLine($"{i}. {LineFromFile}");
-                        Globals.countries.Add(i, new Country(LineFromFile));
+                        dictionaryCountries.countries.Add(i, new Country(LineFromFile));
                         i++;
                     }
                 }
-                Globals.countCountry = i;
+                dictionaryCountries.countCountry = i;
             }
             catch (Exception e)
             {
