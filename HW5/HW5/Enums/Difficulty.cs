@@ -2,7 +2,7 @@
 
 namespace HW5.Enums
 {
-    enum Difficulty
+    public enum Difficulty
     {
         [Description("4")]
         Hard = 1,

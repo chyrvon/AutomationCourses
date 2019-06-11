@@ -4,15 +4,10 @@
     {
         public string Name;
         public bool IsTelenorSupported;
-        public Country()
+        public Country(string name, bool isTelenorSupported = false)
         {
-            Name = "";
-            IsTelenorSupported = false;
-        }
-
-        public Country(string Name)
-        {
-            this.Name = Name;
+            Name = name;
+            IsTelenorSupported = isTelenorSupported;
         }
     }
 }

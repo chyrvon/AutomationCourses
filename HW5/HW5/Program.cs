@@ -19,15 +19,15 @@ namespace HW5
             tasksList = taskManager.SortListTasks(tasksList);
             Console.WriteLine("Sort List by Priority & Difficulty:");
             Display(tasksList);
-            Console.ReadLine();
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
 
             //1 - how much time is needed to complete all tasks
             taskManager.AllTime(tasksList);
 
             //2 - list of tasks of a given priority
-            Console.WriteLine("Enter priority for build list");
-            Console.Write($"(1 - {Priority.High}, " +
-                 $"2 - {Priority.Medium}, 3 - {Priority.Low}): ");
+            taskManager.DisplayConsoleMessage<Priority>($"Enter {typeof(Priority).Name.ToLower()} for build list (");
+
             Task validation = new Task();
             validation.Priority = GetValue.ValidationValue<Priority>();
 

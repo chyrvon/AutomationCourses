@@ -10,7 +10,6 @@ namespace HW7
         static void Main(string[] args)
         {
             DictionaryCountries dictionaryCountries = new DictionaryCountries();
-
             GetDataFromFile.GetCountriesFromFile(dictionaryCountries);
             Console.Write("\nEnter Country for add to Dictionary: ");
             dictionaryCountries.AddCountry(Console.ReadLine());
@@ -20,18 +19,13 @@ namespace HW7
             dictionaryCountries.SetTelenorSupported("Denmark");
             dictionaryCountries.SetTelenorSupported("Hungary");
 
-            int i = 1;
-            PrintHelper.StringToPrint += "\nIsTelenorSupported = False for: \n";
-            foreach (KeyValuePair<int, Country> keyValue in dictionaryCountries.countries)
-            {
-                if (keyValue.Value.IsTelenorSupported == false)
-                {
-                    PrintHelper.StringToPrint += $"{i++}. {keyValue.Value.Name}\n";
-                }
-            }
-            Console.WriteLine(PrintHelper.StringToPrint);
-            new PrintHelper();
+            PrintHelper.DisplayCountries(dictionaryCountries);
+            //Console.WriteLine(PrintHelper.StringToPrint);
+            // new PrintHelper();
+            SaveDataToFile.SetCountriesToFile(dictionaryCountries);
+            Console.WriteLine("Press any key to continue");
             Console.ReadKey();
         }
     }
+
 }

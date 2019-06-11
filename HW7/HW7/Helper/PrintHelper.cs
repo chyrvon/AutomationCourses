@@ -23,17 +23,21 @@ namespace HW7.Helper
             page.Graphics.DrawString(PrintString, new Font("Arial", 14), Brushes.Black, 0, 0);
         }
 
-        public static void DisplayCountries(DictionaryCountries dictionaryCountries)
+        public static void DisplayCountries(DictionaryCountries dictionaryCountries, bool isTelenorSupport = false)
         {
+            StringToPrint += $"\nIsTelenorSupported = {isTelenorSupport} for: \n";
             int i = 1;
+            string stringShown;
             Console.Clear();
-            
             foreach (KeyValuePair<int, Country> keyValue in dictionaryCountries.countries)
             {
-                Console.WriteLine($"{i}. {keyValue.Value.Name}");
-                i++;
+                if (keyValue.Value.IsTelenorSupported == isTelenorSupport)
+                {
+                    stringShown = $"{i++}. {keyValue.Value.Name} - {keyValue.Value.IsTelenorSupported}\n";
+                    Console.Write(stringShown);
+                    StringToPrint += stringShown;
+                }
             }
         }
-
     }
 }

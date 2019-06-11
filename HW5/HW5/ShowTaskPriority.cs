@@ -30,15 +30,18 @@ namespace HW5
         }
         public FilterTaskByPriority(Enum getPriority, List<Task> tasksArrayList)
         { 
-            PreparationPrinting($"List of Task with priority {getPriority}");
-
             List<Task> responseTasksFromListByPriority = new List<Task>();
             responseTasksFromListByPriority.AddRange(tasksArrayList.Where(x => x.Priority.Equals(getPriority)).ToList());
 
-            for (int i = 0; i < responseTasksFromListByPriority.Count; i++)
+            if (responseTasksFromListByPriority.Count != 0)
             {
-                PreparationPrinting($"\nTask {responseTasksFromListByPriority[i].Number}");
+                PreparationPrinting($"List of Task with priority {getPriority}");
+                for (int i = 0; i < responseTasksFromListByPriority.Count; i++)
+                {
+                    PreparationPrinting($"\nTask {responseTasksFromListByPriority[i].Number} - {responseTasksFromListByPriority[i].Duration} h");
+                }
             }
+            else Console.WriteLine($"No Task with priority {getPriority}");
         }
         private void PreparationPrinting(string strMessage)
         {

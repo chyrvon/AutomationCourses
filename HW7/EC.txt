@@ -1,28 +1,29 @@
-Austria
-Belgium
-Bulgaria
-Croatia
-Czech Republic
-Cyprus
-Denmark
-Estonia
-Finland
-France
-Germany
-Greeces
-Hungary
-Ireland
-Italy
-Latvia
-Lithuania
-Luxemburg
-Malta
-the Netherlands
-Poland
-Portugal
-Rumania
-Slovakia
-Slovenia
-Spain
-Sweden
-Great Britain
+Country		IsTelenorSupported
+Austria		False
+Belgium		False
+Bulgaria		False
+Croatia		False
+Czech Republic		False
+Cyprus		False
+Denmark		True
+Estonia		False
+Finland		False
+France		False
+Germany		False
+Greeces		False
+Hungary		True
+Ireland		False
+Italy		False
+Latvia		False
+Lithuania		False
+Luxemburg		False
+Malta		False
+the Netherlands		False
+Poland		False
+Portugal		False
+Rumania		False
+Slovakia		False
+Slovenia		False
+Spain		False
+Sweden		False
+Great Britain		False

@@ -1,6 +1,6 @@
 ﻿namespace HW5.Enums
 {
-    enum Priority
+    public enum Priority
     {
         High = 1,
         Medium,
