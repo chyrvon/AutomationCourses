@@ -4,7 +4,7 @@ namespace HW6
 {
     public class GetCurrentMinutes
     {
-        public bool CurrentMinutes()
+        public static bool EvenOrOdd()
         {
             DateTime date = DateTime.Now;
             Console.WriteLine($"Current time: {date.ToShortTimeString()}");

@@ -2,7 +2,7 @@
 
 namespace HW6
 {
-    class SimpleGarland : Garland
+    public class SimpleGarland : Garland<Lamp>
     {
         public SimpleGarland(int garlandLength) : base(garlandLength)
         {
@@ -11,20 +11,6 @@ namespace HW6
                 _garland[i] = new Lamp(i);
             }
         }
-
-        public override void ShowStatusGarland(bool currentEvenMinute)
-        {
-            Console.WriteLine("Simple garland status:");
-            PrintTaskPage.StringToPrn += $"\nSimple garland status:\n";
-            foreach (Lamp i in _garland)
-            {
-                new ConsoleChangeColor(i.GetStatusLamp(currentEvenMinute), "Yellow");
-                Console.WriteLine($"{i.IndexNumber + 1} lamp is {i.GetStatusLamp(currentEvenMinute)}");
-                PrintTaskPage.StringToPrn += $"{i.IndexNumber + 1} lamp is {i.GetStatusLamp(currentEvenMinute)}\n";
-            }
-            Console.ResetColor();
-        }
-        
     }
 }
 

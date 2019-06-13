@@ -1,39 +1,36 @@
 ﻿using System;
-
+using HW6.enam;
 namespace HW6
 {
-    public class ColorGarland : Garland
+    public class ColorGarland : Garland<ColorLamp>
     {
-        public ColorLamp[] Garlands;
         private int numberOfColors = Enum.GetValues(typeof(ColorMy)).Length;
 
         public ColorGarland(int garlandLength) : base(garlandLength)
         {
-            Garlands = new ColorLamp[garlandLength];
-
             for (int i = 1; i <= numberOfColors; i++)
             {
                 ColorMy color = (ColorMy)i;
-
                 for (int j = i - 1; j < garlandLength; j = j + numberOfColors)
                 {
-                    Garlands[j] = new ColorLamp(j, color.ToString());
+                    _garland[j] = new ColorLamp(j, color.ToString());
                 }
             }
         }
 
-        public override void ShowStatusGarland(bool currentEvenMinute)
+        public override void ShowStatusGarland()
         {
+            bool сurrentMinuteEvenOrOdd = GetCurrentMinutes.EvenOrOdd();
             Console.WriteLine("Colored garland status:");
-            PrintTaskPage.StringToPrn += $"\nColored garland status:\n";
-            foreach (ColorLamp item in Garlands)
+            PrintTaskPage.StringToPrint += $"\nColored garland status:\n";
+            foreach (ColorLamp item in _garland)
             {
-                new ConsoleChangeColor(item.GetStatusLamp(currentEvenMinute), item.ColorsLamp);
-                Console.WriteLine($"{item.IndexNumber + 1} lamp is {item.ColorsLamp} and {item.GetStatusLamp(currentEvenMinute)}");
+                new ConsoleChangeColor(item.GetStatusLamp(сurrentMinuteEvenOrOdd), item.ColorsLamp);
+                string stringToShow = $"{item.IndexNumber + 1} lamp is {item.ColorsLamp} and {item.GetStatusLamp(сurrentMinuteEvenOrOdd)}";
+                Console.WriteLine(stringToShow);
                 Console.ResetColor();
-                PrintTaskPage.StringToPrn += $"{item.IndexNumber + 1} lamp is {item.ColorsLamp} and {item.GetStatusLamp(currentEvenMinute)}\n";
+                PrintTaskPage.StringToPrint += stringToShow;
             }
         }
-
     }
 }

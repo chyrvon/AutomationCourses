@@ -1,9 +1,9 @@
 ﻿using System;
-
 namespace HW6
 {
     public class Lamp
     {
+        public string StatusLamp { get; private set; }
         private int _indexNumber;
         public int IndexNumber {
             get
@@ -15,7 +15,7 @@ namespace HW6
                 if (0 > value || value > 1000)
                 {
                     Console.WriteLine($"{value} is not valid.");
-                    _indexNumber = Garland.DefaultNumberOfLamps; 
+                    _indexNumber = Garland<Lamp>.DefaultNumberOfLamps; 
                     Console.WriteLine($"Set default value: {_indexNumber}");
                 }
                 else
@@ -32,15 +32,15 @@ namespace HW6
 
         public string GetStatusLamp(bool currentEvenMinute)
         {
-
             if (IndexNumber % 2 == 0 ^ currentEvenMinute)
             {
-                return "On";
+                StatusLamp = "On";
             }
             else
             {
-                return "Off";
+                StatusLamp = "Off";
             }
+            return StatusLamp;
         }
     }
 }

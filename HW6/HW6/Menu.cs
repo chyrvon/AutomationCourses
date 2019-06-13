@@ -1,4 +1,5 @@
 ﻿using System;
+using HW6.Helper;
 
 namespace HW6
 {
@@ -6,6 +7,7 @@ namespace HW6
     {
         public const int ReTry = 5;
         private int _userСhoice;
+        private bool сurrentMinuteEvenOrOdd = GetCurrentMinutes.EvenOrOdd();
         protected int UserСhoice
         {
             get
@@ -29,48 +31,50 @@ namespace HW6
         public UserMenu()
         {
             Console.Clear();
-            Console.WriteLine(@"Menu:\n" +
-                "1. Set number of lamps to Simple Garland and show\n" +
-                "2. Set number of lamps to Colored Garland and show\n" +
-                "3. Show garlands and print\n\n" +
+            Console.WriteLine("Menu: \n" +
+                "1. Create simple garland\n" +
+                "2. Create colored garland\n" +
+                "3. Create simple and colored garlands\n\n" +
                 "4. Exit\n");
             Console.Write("Select: ");
-            UserСhoice = new GetValue().ReadValueConsoleToMenu(4);
+            UserСhoice = GetValue.ReadValueConsoleToMenu(4);
             ProcessingMenu(UserСhoice);
         }
 
         public void UserSubMenu(ColorGarland colorGarland)
         {
             Console.WriteLine("\nSub-Menu:\n" +
-                "1. Set color to lamp in Colored Garland\n" +
+                "1. Setting the color of the lamp in the garland\n" +
                 "2. Get color of lamp in Colored Garland\n" +
                 "3. Exit\n");
             Console.Write("Select: ");
-            UserСhoice = new GetValue().ReadValueConsoleToMenu(3);
+            UserСhoice = GetValue.ReadValueConsoleToMenu(3);
             ProcessingSubMenu(UserСhoice, colorGarland);
         }
 
         private void ProcessingSubMenu(int userСhoice, ColorGarland _colorGarland)
         {
+            int lengthGarland = _colorGarland._garland.Length;
+            
             switch (userСhoice)
             {
                 case 1:
                     //1. Set color to lamp in Colored Garland
                     Console.Write("Please enter index of lamp in Colored Garlend: ");
-                    int indexLamp = new GetValue().ReadValueConsoleToMenu(_colorGarland._garland.Length);
+                    int indexLamp = GetValue.ReadValueConsoleToMenu(lengthGarland);
                     indexLamp -= 1;
                     Console.Write("\nPlease enter color: ");
-                    string newColor = new GetValue().ReadValueConsoleColor();
-                    PrintTaskPage.StringToPrn = "";//clear Print buffer
-                    _colorGarland.Garlands[indexLamp] = new ColorLamp(indexLamp, newColor);
-                    _colorGarland.ShowStatusGarland(new GetCurrentMinutes().CurrentMinutes());
+                    string newColor = GetValue.ReadValueConsoleColor();
+                    PrintTaskPage.StringToPrint = null;//clear Print buffer
+                    _colorGarland._garland[indexLamp] = new ColorLamp(indexLamp, newColor);
+                    _colorGarland.ShowStatusGarland();
                     break;
                 case 2:
                     //2. Get color of lamp in Colored Garland
                     Console.Write("Please enter index of lamp in Colored Garlend: ");
-                    int indexLampGetColor = new GetValue().ReadValueConsoleToMenu(_colorGarland._garland.Length);
+                    int indexLampGetColor = GetValue.ReadValueConsoleToMenu(lengthGarland);
                     indexLampGetColor -= 1;
-                    string getColor = _colorGarland.Garlands[indexLampGetColor].ColorsLamp;
+                    string getColor = _colorGarland._garland[indexLampGetColor].ColorsLamp;
                     Console.Write($"\nColor of lamp with index number {indexLampGetColor+1} is {getColor}\n");
                     break;
                 default:
@@ -90,15 +94,15 @@ namespace HW6
             switch (userСhoice)
             {
                 case 1:
-                    ////1. Set number of lamps to Simple Garland
+                    //1. Set number of lamps to Simple Garland
                     Console.Clear();
                     Console.Write("Enter number of lamps in Simple Garland: ");
-                    int lamps = new GetValue().ReadValueConsoleToMenu(1000);
+                    int lamps = GetValue.ReadValueConsoleToMenu(1000);
                     SimpleGarland simpleGarland = new SimpleGarland(lamps);
                     if (!showGarlands)
                     {
-                        simpleGarland.ShowStatusGarland(new GetCurrentMinutes().CurrentMinutes());
-                        new PrintTaskPage().PrintMenu();
+                        simpleGarland.ShowStatusGarland();
+                        PrintTaskPage.PrintMenu();
                     }
                     else
                     {
@@ -110,13 +114,13 @@ namespace HW6
                     //2. Set number of lamps to Color Garland
                     Console.Clear();
                     Console.Write("Enter number of lamps to Colored Garland: ");
-                    lamps = new GetValue().ReadValueConsoleToMenu(1000);
+                    lamps = GetValue.ReadValueConsoleToMenu(1000);
                     ColorGarland colorGarland = new ColorGarland(lamps);
                     if (!showGarlands)
                     {
-                        colorGarland.ShowStatusGarland(new GetCurrentMinutes().CurrentMinutes());
+                        colorGarland.ShowStatusGarland();
                         UserSubMenu(colorGarland);
-                        new PrintTaskPage().PrintMenu();
+                        PrintTaskPage.PrintMenu();
                     }
                     else
                     {
@@ -134,11 +138,11 @@ namespace HW6
                     }
                     else
                     {
-                        _simpleGarland.ShowStatusGarland(new GetCurrentMinutes().CurrentMinutes());
-                        _colorGarland.ShowStatusGarland(new GetCurrentMinutes().CurrentMinutes());
-                        new PrintTaskPage().StartPrint();
-                        Console.WriteLine("Press enter to exit");
-                        Console.ReadLine();
+                        _simpleGarland.ShowStatusGarland();
+                        _colorGarland.ShowStatusGarland();
+                        PrintTaskPage.PrintMenu();
+                        Console.WriteLine("Press any key to exit");
+                        Console.ReadKey();
                     }
                     break;
                 case 4:
@@ -148,11 +152,5 @@ namespace HW6
                     break;
             }
         }
-
-        
-
-
-
-
     }
 }
