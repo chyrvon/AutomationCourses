@@ -6,10 +6,6 @@ namespace HW8
 {
     class RandomNumberGenerator
     {
-        public RandomNumberGenerator()
-        {
-        }
-
         public string GetRndString()
         {
             return $"{new Random().Next(10000)}";
@@ -19,6 +15,5 @@ namespace HW8
         {
             return new Random().Next(10000);
         }
-
     }
 }
